@@ -3,6 +3,7 @@
 
 # File name: droneCRTL.py
 # Author: Daniel Bosman
+# Author: Kushal Suvarnkar
 # Date created: 15/11/2022
 # Date last modified: 15/11/2022
 # Python version: 3.10.7
