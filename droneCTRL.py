@@ -40,7 +40,7 @@ Start of the Drone Controller
 '''
 
 print("──────────────────")
-print("@ droneCTRL v" +  + random.choice(kawaii_list))
+print("@ droneCTRL " + Information('drone.txt') + random.choice(kawaii_list))
 print("$", datetime.now())
 print("──────────────────")
 
