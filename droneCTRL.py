@@ -25,7 +25,6 @@ from drone_state import *
 Initialization
 '''
 
-version_number = 1.0
 kawaii_list = [
     " (⌐▨_▨)",
     " (⌐■_■)",
