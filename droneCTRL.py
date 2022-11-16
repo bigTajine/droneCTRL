@@ -18,7 +18,8 @@ import x_pos_set
 import bat_set
 import x_pos_inc
 import bat_dec
-
+from version_control import *
+from droneON import *
 '''
 Initialization
 '''
@@ -39,7 +40,7 @@ Start of the Drone Controller
 '''
 
 print("──────────────────")
-print("@ droneCTRL v" + str(version_number) + random.choice(kawaii_list))
+print("@ droneCTRL v" +  + random.choice(kawaii_list))
 print("$", datetime.now())
 print("──────────────────")
 
