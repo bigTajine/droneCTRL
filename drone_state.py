@@ -1,3 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# File name: drone_state.py
+# Date created: 15/11/2022
+# Date last modified: 16/11/2022
+# Python version: 3.11.0
+
 def switchFunc(version):
     with open(version, 'r') as file:
         filedata = file.read()
