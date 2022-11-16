@@ -20,7 +20,7 @@ import bat_set
 import x_pos_inc
 import bat_dec
 from version_control import *
-from droneON import *
+from drone_state import *
 '''
 Initialization
 '''

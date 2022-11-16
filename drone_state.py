@@ -1,10 +1,10 @@
 def switchFunc(version):
     with open(version, 'r') as file:
         filedata = file.read()
-    if filedata == 'ON':
-        filedata = filedata.replace('ON', 'OFF')
-    elif filedata == 'OFF':
-        filedata = filedata.replace('OFF', 'ON')
+    if filedata == '1':
+        filedata = filedata.replace('1', '0')
+    elif filedata == '0':
+        filedata = filedata.replace('0', '1')
     with open(version, 'w') as file:
         file.write(filedata)
 
