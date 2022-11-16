@@ -21,6 +21,7 @@ import x_pos_inc
 import bat_dec
 from version_control import *
 from drone_state import *
+
 '''
 Initialization
 '''
@@ -30,6 +31,7 @@ kawaii_list = [
     " (⌐■_■)",
     " (ﾒ■_■)y-～"]
 
+print(open("drone_state.txt", "r").read())
 uav_status = 1
 route = []
 buildings = []
@@ -40,7 +42,7 @@ Start of the Drone Controller
 '''
 
 print("──────────────────")
-print("@ droneCTRL " + Information('version_control.txt') + random.choice(kawaii_list))
+print("@ droneCTRL " + information('version_control.txt') + random.choice(kawaii_list))
 print("$", datetime.now())
 print("──────────────────")
 auth.func1()

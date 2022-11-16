@@ -6,7 +6,7 @@
 # Date last modified: 16/11/2022
 # Python version: 3.11.0
 
-def Information(version):
+def information(version):
     version_control = ''
     try:
         with open(version, 'r') as file:
@@ -20,4 +20,4 @@ def Information(version):
     return version_control
 
 
-print(Information('version_control.txt'))
+print(information('version_control.txt'))

@@ -19,5 +19,4 @@ def switchFunc(version):
         file.write(filedata)
 
 
-if __name__ == '__main__':
-    switchFunc('drone_state.txt')
+    return switchFunc('drone_state.txt')
