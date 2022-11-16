@@ -14,6 +14,7 @@ from datetime import datetime
 import random
 import time
 
+import auth
 import x_pos_set
 import bat_set
 import x_pos_inc
@@ -42,6 +43,7 @@ print("──────────────────")
 print("@ droneCTRL v" + str(version_number) + random.choice(kawaii_list))
 print("$", datetime.now())
 print("──────────────────")
+auth.func1()
 
 while uav_status != 1:
     x_input = input("TYPE (X) TO CHECK UAV STATUS: ")
@@ -81,13 +83,13 @@ if z_input == "A":
             x = f.readlines()
         with open('bat.txt') as f:
             y = f.readlines()
-        if int(y[0]) < 35 and low_bat_flag == False:
-            print("LOW BATTERY")
-            low_bat_flag = True
         if int(y[0]) < 25:
             print("BATTERY BELOW 25; ENDING SURVEY")
             end_flag = True
             break
+        elif int(y[0]) < 35 and low_bat_flag == False:
+            print("LOW BATTERY")
+            low_bat_flag = True
         print(x[0],y[0])
         x_pos_inc.func1()
         bat_dec.func1()
