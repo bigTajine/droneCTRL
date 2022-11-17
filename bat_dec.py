@@ -9,7 +9,7 @@
 import random
 
 
-def func1():
+def bat_dec():
     with open('bat.txt') as f:
         x = f.readlines()
         # print(x[0])
@@ -21,4 +21,4 @@ def func1():
         f.write(str(y))
 
 if __name__ == '__main__':
-    func1()
+    bat_dec()
