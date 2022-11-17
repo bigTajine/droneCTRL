@@ -17,8 +17,8 @@ def func1():
         userInput = input("$ USERNAME: ")
 
         if userInput == username:
-            a = input("# PASSWORD: ")
-            if a == password:
+            inputPassword = input("# PASSWORD: ")
+            if inputPassword == password:
                 user_flag = True
                 print("──────────────────")
                 print("% WELCOME " + username + "!")
