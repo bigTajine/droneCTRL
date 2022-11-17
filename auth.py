@@ -11,8 +11,8 @@ def func1():
 
     while not user_flag:
 
-        username = 'KStol1'
-        password = 'KStol1'
+        username = '1234'
+        password = '1234'
 
         userInput = input("$ USERNAME: ")
 

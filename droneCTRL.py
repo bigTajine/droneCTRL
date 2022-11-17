@@ -76,10 +76,13 @@ while uav_status != 1:
                 print("──────────────────")
                 uav_flag = True
 
+time.sleep(3)
+print("% ROUTE IMPORTED")
+print("──────────────────")
 z_input = input("TYPE (A) TO START SURVEY: ")
 if z_input == "A":
     print("──────────────────")
-    print("X_POS", "BAT")
+    print("X_POS","Y_POS","BAT")
     x_pos_set.x_pos_set()
     bat_set.bat_set()
 
@@ -88,16 +91,18 @@ if z_input == "A":
     while 1:
         with open('x_pos.txt') as f:
             x = f.readlines()
-        with open('bat.txt') as f:
+        with open('y_pos.txt') as f:
             y = f.readlines()
-        if int(y[0]) < 25:
+        with open('bat.txt') as f:
+            z = f.readlines()
+        if int(z[0]) < 25:
             print("! BATTERY BELOW 25; ENDING SURVEY")
             end_flag = True
             break
-        elif int(y[0]) < 35 and low_bat_flag is False:
+        elif int(z[0]) < 35 and low_bat_flag == False:
             print("! LOW BATTERY")
             low_bat_flag = True
-        print(x[0], y[0])
+        print(x[0], y[0], z[0])
         x_pos_inc.x_pos()
         bat_dec.bat_dec()
         time.sleep(1)

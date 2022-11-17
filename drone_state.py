@@ -17,10 +17,10 @@ def switchFunc():
         "(╭ರ_•́)",
         "(▼ω▼o)y-~~~"]
 
-    print("■■■■■■■■■■■■■■■■■■")
+    print("──────────────────")
     print("@ drone_state", "version 1.0", random.choice(kawaii_list))
     print("$", datetime.now())
-    print("■■■■■■■■■■■■■■■■■■")
+    print("──────────────────")
     time.sleep(3)
     with open("drone_state.txt", 'r') as file:
         filedata = file.read()
@@ -32,7 +32,7 @@ def switchFunc():
         print('! UAV ON')
     with open("drone_state.txt", 'w') as file:
         file.write(filedata)
-    print("■■■■■■■■■■■■■■■■■■")
+    print("──────────────────")
 
 
 if __name__ == '__main__':
