@@ -9,16 +9,17 @@
 import random
 
 
-def func1():
-    with open('x_pos.txt') as f:
-        x = f.readlines()
+def x_pos():
+    with open('x_pos.txt') as file:
+        x_coordinates = file.readlines()
         # print(x[0])
 
-        y = int(x[0]) + random.randrange(10, 15)
+        position_increment = int(x_coordinates[0]) + random.randrange(10, 15)
         # print(y)
 
     with open('x_pos.txt', 'w') as f:
-        f.write(str(y))
+        f.write(str(position_increment))
+
 
 if __name__ == '__main__':
-    func1()
+    x_pos()

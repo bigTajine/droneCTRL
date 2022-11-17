@@ -11,14 +11,14 @@ import random
 
 def bat_dec():
     with open('bat.txt') as file:
-        x = file.readlines()
+        file_read = file.readlines()
         # print(x[0])
 
-        y = int(x[0]) - random.randrange(1, 3)
+        dec_bat = int(file_read[0]) - random.randrange(1, 3)
         # print(y)
 
     with open('bat.txt', 'w') as file:
-        file.write(str(y))
+        file.write(str(dec_bat))
 
 
 if __name__ == '__main__':

@@ -10,6 +10,7 @@ from datetime import datetime
 import random
 import time
 
+
 def switchFunc():
     kawaii_list = [
         "(▼O▼ﾒ)",
@@ -32,6 +33,7 @@ def switchFunc():
     with open("drone_state.txt", 'w') as file:
         file.write(filedata)
     print("■■■■■■■■■■■■■■■■■■")
+
 
 if __name__ == '__main__':
     switchFunc()

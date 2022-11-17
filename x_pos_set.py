@@ -6,12 +6,12 @@
 # Date last modified: 16/11/2022
 # Python version: 3.11.0
 
-def func1():
-    with open('x_pos.txt', 'w') as f:
-        x = 0
+def x_pos_set():
+    with open('x_pos.txt', 'w') as file:
+        x_coordinates = 0
         # print(x)
-        f.write(str(x))
+        file.write(str(x_coordinates))
 
 
 if __name__ == '__main__':
-    func1()
+    x_pos_set()
