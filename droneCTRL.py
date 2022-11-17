@@ -94,7 +94,7 @@ if z_input == "A":
             print("! BATTERY BELOW 25; ENDING SURVEY")
             end_flag = True
             break
-        elif int(y[0]) < 35 and low_bat_flag == False:
+        elif int(y[0]) < 35 and low_bat_flag is False:
             print("! LOW BATTERY")
             low_bat_flag = True
         print(x[0], y[0])
