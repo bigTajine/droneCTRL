@@ -24,9 +24,11 @@ def func1():
                 print("% WELCOME " + username + "!")
                 print("──────────────────")
             else:
+                print("──────────────────")
                 print("^ WRONG PASSWORD")
                 print("──────────────────")
         else:
+            print("──────────────────")
             print("^ WRONG USERNAME")
             print("──────────────────")
 
