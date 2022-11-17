@@ -9,6 +9,7 @@
 '''
 Import statements
 '''
+
 import datetime
 import random
 import time
@@ -17,7 +18,6 @@ import bat_dec
 import bat_set
 import x_pos_inc
 import x_pos_set
-
 import drone_state
 
 '''
@@ -55,7 +55,7 @@ while uav_status != 1:
     print("──────────────────")
 
     if x_input == 'X':
-        while uav_flag != True:
+        while not uav_flag:
             print("@ CHECKING UAV STATUS")
             uav_status = int(open("drone_state.txt", "r").read())
             time.sleep(3)
@@ -80,8 +80,8 @@ z_input = input("TYPE (A) TO START SURVEY: ")
 if z_input == "A":
     print("──────────────────")
     print("X_POS", "BAT")
-    x_pos_set.func1()
-    bat_set.func1()
+    x_pos_set.x_pos_set()
+    bat_set.bat_set()
 
     low_bat_flag = False
 
@@ -98,8 +98,8 @@ if z_input == "A":
             print("! LOW BATTERY")
             low_bat_flag = True
         print(x[0], y[0])
-        x_pos_inc.func1()
-        bat_dec.func1()
+        x_pos_inc.x_pos()
+        bat_dec.bat_dec()
         time.sleep(1)
 
 time.sleep(3)
