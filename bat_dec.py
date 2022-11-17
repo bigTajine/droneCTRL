@@ -20,5 +20,6 @@ def bat_dec():
     with open('bat.txt', 'w') as f:
         f.write(str(y))
 
+
 if __name__ == '__main__':
     bat_dec()
