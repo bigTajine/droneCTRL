@@ -106,7 +106,6 @@ def parse_file(filename: str):
 
 
 if __name__ == '__main__':
-
     entry_data = parse_file("data.txt")
     drone = Drone(entry_data)
     drone.scan()
