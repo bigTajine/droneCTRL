@@ -37,6 +37,7 @@ class Drone:
     previous_step = Directions.NONE
     position = Position(0, 0)
     vision: Dict[Directions, Position] = {}
+    # vision = {}
     PREDETERMINED_HEIGHT = 3
 
     def __init__(self, input_data: List[EntryData]):
@@ -54,7 +55,7 @@ class Drone:
         self.vision[Directions.UP].x = self.position.x
         self.vision[Directions.UP].y = self.position.y + 3
         self.vision[Directions.DOWN].x = self.position.x
-        self.vision[Directions.DOWN].y = self.position.x - 3
+        self.vision[Directions.DOWN].y = self.position.y - 3
 
     def move_forward(self):
         self.position.x = self.position.x + 1
@@ -86,7 +87,7 @@ class Drone:
                 self.vision[Directions.BACK].x < x_building_second_wall):
             return Directions.DOWN
         elif self.vision[Directions.BACK].x == x_building_second_wall:
-            return Directions.DOWN
+            return Directions.BACK
         else:
             return Directions.NONE
 
@@ -105,8 +106,10 @@ def parse_file(filename: str):
 
 
 if __name__ == '__main__':
+
     entry_data = parse_file("data.txt")
-    drone = Drone(data)
+    drone = Drone(entry_data)
+    drone.scan()
     print("Drone started...")
 
     while drone.building_counter <= len(entry_data) - 1:
@@ -116,22 +119,21 @@ if __name__ == '__main__':
             continue
 
         direction = drone.scan()
-        match direction:
-            case Directions.FRONT:
-                drone.move_up()
-                drone.previous_step = Directions.FRONT
-            case Directions.BACK:
+        if direction == Directions.FRONT:
+            drone.move_up()
+            drone.previous_step = Directions.FRONT
+        elif direction == Directions.BACK:
+            drone.move_down()
+            drone.previous_step = Directions.BACK
+        elif direction == Directions.DOWN:
+            drone.move_forward()
+            drone.previous_step = Directions.DOWN
+        elif direction == Directions.NONE:
+            if drone.previous_step == Directions.BACK:
                 drone.move_down()
-                drone.previous_step = Directions.BACK
-            case Directions.DOWN:
+            else:
                 drone.move_forward()
-                drone.previous_step = Directions.DOWN
-            case Directions.NONE:
-                if drone.previous_step == Directions.BACK:
-                    drone.move_down()
-                else:
-                    drone.move_forward()
-                drone.previous_step = Directions.NONE
+            drone.previous_step = Directions.NONE
 
         time.sleep(0.2)
         print("Current coordinates: ", drone.position)
